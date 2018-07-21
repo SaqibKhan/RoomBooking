@@ -10,3 +10,5 @@ Room.Booking.WebAPI/bin/Ninject.xml
 Room.Booking.WebAPI/bin/Ninject.Web.Common.xml
 Room.Booking.WebAPI/bin/Ninject.Web.Common.WebHost.xml
 Room.Booking.DAL/bin/Debug/Dapper.xml
+Room.Booking.Business/obj/Debug/Room.Booking.Business.csproj.CopyComplete
+Room.Booking.Common/obj/Debug/Room.Booking.Common.csproj.FileListAbsolute.txt
