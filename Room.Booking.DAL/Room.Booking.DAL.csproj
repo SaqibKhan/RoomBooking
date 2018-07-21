@@ -31,7 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,8 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Concrete\RoomBooking.cs" />
+    <Compile Include="Interface\IRoomBooking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Room.Booking.Common\Room.Booking.Common.csproj">
+      <Project>{55d319ba-777e-4492-8ff4-5ee80edcb380}</Project>
+      <Name>Room.Booking.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Room.Booking.Entities\Room.Booking.Entities.csproj">
+      <Project>{8DD168F0-65D1-4B2D-B1E7-06722A85E2A3}</Project>
+      <Name>Room.Booking.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

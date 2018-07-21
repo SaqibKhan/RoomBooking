@@ -42,7 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Concrete\RoomFinder.cs" />
+    <Compile Include="Interface\IRoomFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Room.Booking.DAL\Room.Booking.DAL.csproj">
+      <Project>{1FAB1E1E-3D50-4C6B-8DC4-18015F1E24B8}</Project>
+      <Name>Room.Booking.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Room.Booking.Entities\Room.Booking.Entities.csproj">
+      <Project>{8DD168F0-65D1-4B2D-B1E7-06722A85E2A3}</Project>
+      <Name>Room.Booking.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

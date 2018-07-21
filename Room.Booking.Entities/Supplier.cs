@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Room.Booking.Entities
 {
-    public class Class1
+    public class Supplier
     {
+        public int SupplierId { get; set; }
+        public string SupplierName { get; set; }
+        public string Address { get; set; }
+
     }
 }

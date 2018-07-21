@@ -1,2 +1,12 @@
-﻿/packages
+/packages
 /.vs
+Room.booking.DB/bin/Debug/Room.booking.DB.dacpac
+Room.booking.DB/Room.booking.DB.jfm
+Room.booking.DB/Room.booking.DB.dbmdl
+Room.Booking.Business/bin/Debug/Dapper.xml
+Room.Booking.WebAPI/bin/roslyn/Microsoft.Managed.Core.targets
+Room.Booking.WebAPI/bin/Dapper.xml
+Room.Booking.WebAPI/bin/Ninject.xml
+Room.Booking.WebAPI/bin/Ninject.Web.Common.xml
+Room.Booking.WebAPI/bin/Ninject.Web.Common.WebHost.xml
+Room.Booking.DAL/bin/Debug/Dapper.xml
