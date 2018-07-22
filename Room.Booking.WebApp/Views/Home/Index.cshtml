@@ -1,0 +1,38 @@
+﻿@model Room.Booking.WebApp.Models.HotelRoomsViewModel
+@{
+    ViewBag.Title = "Hotel Rooms";
+    var roomsGroup = from room in Model.suppliersRooms
+                            group room by room.RoomType into supplierRoomGroup
+                            select supplierRoomGroup;
+
+}
+
+
+<div>
+
+    @foreach (var group in roomsGroup)
+    {
+        
+            <div class="card">
+                <h3 class="card-header primary-color white-text">@group.Key</h3>
+                <div class="row col-4">
+
+                    @foreach (var item in group.ToList())
+                    {
+                        <div class="col-6"> @item.SupplierName</div>
+                        <div class="col-6">@item.Price</div>
+
+
+                    }
+
+                </div>
+            </div>
+          
+
+            }
+
+
+
+
+
+        </div>

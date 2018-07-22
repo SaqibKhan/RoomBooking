@@ -13,6 +13,7 @@ namespace Room.Booking.WebAPI.App_Start
     using Room.Booking.Business;
     using Room.Booking.Common.Logger;
     using Room.Booking.DAL;
+    using Ninject.WebApi.DependencyResolver;
 
     public static class NinjectWebCommon 
     {
@@ -48,6 +49,8 @@ namespace Room.Booking.WebAPI.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 RegisterServices(kernel);
+                // Set Web API Resolver
+                System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch
@@ -67,6 +70,7 @@ namespace Room.Booking.WebAPI.App_Start
             kernel.Bind<ILogger>().To<ServiceFileLogger>();
             kernel.Bind<IRoomBooking>().To<RoomBooking>();
           
-        }        
+        }
+
     }
 }

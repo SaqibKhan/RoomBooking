@@ -11,6 +11,7 @@ namespace Room.Booking.Entities
         public int SupplierID { get; set; }
         public string SupplierName { get; set; }
         public string RoomType { get; set; }
+        public int RoomTypeId { get; set; }
         public int Price { get; set; }
         public string Remarks { get; set; }
     }

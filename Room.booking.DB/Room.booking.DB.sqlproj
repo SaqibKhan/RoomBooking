@@ -67,5 +67,7 @@
     <Build Include="Tables\RoomType.sql" />
     <Build Include="Tables\Supplier.sql" />
     <Build Include="Tables\SuppliersRooms.sql" />
+    <None Include="StoredProcedures\dbo.GetAllRooms.sql" />
+    <None Include="StoredProcedures\dbo.GetRoomsByType.sql" />
   </ItemGroup>
 </Project>

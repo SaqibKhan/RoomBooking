@@ -6,7 +6,16 @@ C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.Business\obj\Debug
 C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.csprojAssemblyReference.cache
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Business.dll
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Business.pdb
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.DAL.dll
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Entities.dll
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Common.dll
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Dapper.dll
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.DAL.pdb
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Entities.pdb
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Room.Booking.Common.pdb
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\bin\Debug\Dapper.xml
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.csprojAssemblyReference.cache
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.csproj.CopyComplete
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.dll
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.Business\obj\Debug\Room.Booking.Business.pdb

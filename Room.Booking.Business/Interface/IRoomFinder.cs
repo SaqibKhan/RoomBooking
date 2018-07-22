@@ -10,6 +10,7 @@ namespace Room.Booking.Business
     public interface IRoomFinder
     {
         List<SuppliersRooms> GetRooms();
-        
+        List<SuppliersRooms> GetRoomsByRoomType(int typeId);
+
     }
 }

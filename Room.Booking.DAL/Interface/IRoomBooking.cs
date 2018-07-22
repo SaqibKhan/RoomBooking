@@ -10,5 +10,6 @@ namespace Room.Booking.DAL
     public interface IRoomBooking
     {
         List<SuppliersRooms> GetSuppliersRooms();
+        List<SuppliersRooms> GetRoomsByRoomType(int roomTypetypeId);
     }
 }

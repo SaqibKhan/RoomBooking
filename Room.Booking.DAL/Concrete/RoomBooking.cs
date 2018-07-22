@@ -28,7 +28,15 @@ namespace Room.Booking.DAL
         {
             using (IDbConnection db = DbConnectionFactory.GetDbConnection(dataProviderType))
             {
-                return db.Query<SuppliersRooms> ("Select * From Author").ToList();
+                return db.Query<SuppliersRooms> ("GetAllRooms").ToList();
+            }
+        }
+        public List<SuppliersRooms> GetRoomsByRoomType(int roomTypetypeId)
+        {
+            using (IDbConnection db = DbConnectionFactory.GetDbConnection(dataProviderType))
+            {
+                const string storedProcedure = "dbo.GetRoomsByType";
+                return db.Query<SuppliersRooms>(storedProcedure, new { RoomTypeId = roomTypetypeId }, commandType: CommandType.StoredProcedure).ToList();
             }
         }
     }

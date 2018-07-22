@@ -15,7 +15,9 @@ namespace Room.Booking.Business
         {
             _IRoomBooking = roomBooking;
         }
-        public List<SuppliersRooms> GetRooms()=> _IRoomBooking.GetSuppliersRooms();
+        public List<SuppliersRooms> GetRooms()=>_IRoomBooking.GetSuppliersRooms();
+        
+        public List<SuppliersRooms> GetRoomsByRoomType(int typeId) => _IRoomBooking.GetRoomsByRoomType(typeId);
 
     }
 }
