@@ -13,12 +13,12 @@ using System.Threading.Tasks;
 
 namespace Room.Booking.DAL
 {
-    public class RoomBooking: IRoomBooking
+    public class RoomBookingDac: IRoomBooking
     {
         readonly string dataProviderTypeValue;
         readonly DataProviderType dataProviderType;
 
-        public RoomBooking()
+        public RoomBookingDac()
         {
             dataProviderTypeValue = ConfigurationManager.AppSettings["DataProviderType"];
             dataProviderType = (DataProviderType)Enum.Parse(typeof(DataProviderType), dataProviderTypeValue);

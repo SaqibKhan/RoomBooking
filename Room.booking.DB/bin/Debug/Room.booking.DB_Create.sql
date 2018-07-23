@@ -182,17 +182,15 @@ IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
 
 
 GO
-PRINT N'Creating [dbo].[SuppliersRooms]...';
+PRINT N'Creating [dbo].[RoomType]...';
 
 
 GO
-CREATE TABLE [dbo].[SuppliersRooms] (
-    [ID]         INT            IDENTITY (1, 1) NOT NULL,
-    [SupplierID] INT            NULL,
-    [RoomID]     NCHAR (10)     NULL,
-    [Price]      MONEY          NULL,
-    [Remarks]    NVARCHAR (500) NULL,
-    CONSTRAINT [PK_SuppliersRooms] PRIMARY KEY CLUSTERED ([ID] ASC) ON [PRIMARY]
+CREATE TABLE [dbo].[RoomType] (
+    [RoomTypeId]  INT            NOT NULL,
+    [RoomType]    NVARCHAR (100) NULL,
+    [Description] NVARCHAR (300) NULL,
+    CONSTRAINT [PK_RoomTypeId] PRIMARY KEY CLUSTERED ([RoomTypeId] ASC) ON [PRIMARY]
 ) ON [PRIMARY];
 
 
@@ -202,26 +200,83 @@ PRINT N'Creating [dbo].[Supplier]...';
 
 GO
 CREATE TABLE [dbo].[Supplier] (
-    [ID]       INT            IDENTITY (1, 1) NOT NULL,
-    [Supplier] NVARCHAR (300) NULL,
-    [Address]  NVARCHAR (500) NULL,
-    CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED ([ID] ASC) ON [PRIMARY]
+    [SupplierId] INT            IDENTITY (1, 1) NOT NULL,
+    [Supplier]   NVARCHAR (300) NULL,
+    [Address]    NVARCHAR (500) NULL,
+    CONSTRAINT [PK_SupplierId] PRIMARY KEY CLUSTERED ([SupplierId] ASC) ON [PRIMARY]
 ) ON [PRIMARY];
 
 
 GO
-PRINT N'Creating [dbo].[RoomType]...';
+PRINT N'Creating [dbo].[SuppliersRooms]...';
 
 
 GO
-CREATE TABLE [dbo].[RoomType] (
-    [ID]          INT            NOT NULL,
-    [RoomType]    NVARCHAR (100) NULL,
-    [Description] NVARCHAR (300) NULL,
-    CONSTRAINT [PK_RoomType] PRIMARY KEY CLUSTERED ([ID] ASC) ON [PRIMARY]
+CREATE TABLE [dbo].[SuppliersRooms] (
+    [SuppliersRoomsId] INT            IDENTITY (1, 1) NOT NULL,
+    [SupplierID]       INT            NULL,
+    [RoomID]           NCHAR (10)     NULL,
+    [Price]            MONEY          NULL,
+    [Remarks]          NVARCHAR (500) NULL,
+    CONSTRAINT [PK_SuppliersRoomsId] PRIMARY KEY CLUSTERED ([SuppliersRoomsId] ASC) ON [PRIMARY]
 ) ON [PRIMARY];
 
 
+GO
+PRINT N'Creating [dbo].[SupplierReviews]...';
+
+
+GO
+CREATE TABLE [dbo].[SupplierReviews] (
+    [ReviewId]        INT             IDENTITY (1, 1) NOT NULL,
+    [SupplierId]      NVARCHAR (300)  NULL,
+    [Rating]          INT             NULL,
+    [Title]           NCHAR (50)      NULL,
+    [CustomerRemarks] NVARCHAR (3000) NULL,
+    CONSTRAINT [PK_SupplierReviews] PRIMARY KEY CLUSTERED ([ReviewId] ASC) ON [PRIMARY]
+) ON [PRIMARY];
+
+
+GO
+PRINT N'Creating [dbo].[GetCustomerReviews]...';
+
+
+GO
+CREATE PROCEDURE dbo.GetCustomerReviews
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+  
+  SELECT ReviewId ,[SupplierId]
+      ,[Rating]  ,[Title]
+	  ,'Romantic' as UniqueLabels 
+      ,[CustomerRemarks]
+  FROM [dbo].[SupplierReviews]
+  WHERE FREETEXT (*, 'Romantic')
+  UNION  
+  SELECT ReviewId 
+      ,[SupplierId]
+      ,[Rating]
+      ,[Title]
+	  ,'Couple friendly,Pure bliss,Memorable' as UniqueLabels 
+      ,[CustomerRemarks]
+    FROM [dbo].SupplierReviews
+    WHERE FREETEXT (*, 'Couple friendly,Pure bliss,Memorable')
+  
+  UNION
+  
+  SELECT ReviewId 
+      ,[SupplierId]
+      ,[Rating]
+      ,[Title]
+	  ,'Popular with Family travelers' as UniqueLabels 
+      ,[CustomerRemarks]
+    FROM [dbo].[SupplierReviews]
+	WHERE FREETEXT (*,'Popular with Family travelers')
+
+END
 GO
 DECLARE @VarDecimalSupported AS BIT;
 

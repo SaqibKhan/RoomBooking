@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerReview.cs" />
     <Compile Include="RoomType.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="SuppliersRooms.cs" />

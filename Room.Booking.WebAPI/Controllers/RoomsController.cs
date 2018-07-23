@@ -13,9 +13,11 @@ namespace Room.Booking.WebAPI.Controllers
     public class RoomsController : ServiceBase
     {
         private IRoomFinder _roomFinder;
-        public RoomsController(IRoomFinder roomFinder, ILogger logger) : base(logger)
+        private ICustomerReview _customerReview;
+        public RoomsController(IRoomFinder roomFinder, ICustomerReview customerReview,ILogger logger) : base(logger)
         {
             _roomFinder = roomFinder;
+            _customerReview = customerReview;
         }
 
         [HttpGet]
@@ -38,5 +40,13 @@ namespace Room.Booking.WebAPI.Controllers
             };
             return RoomTypes;
         }, $"Getting Room Types");
+
+
+        [HttpGet]
+        [Route("api/SuppliersReview")]
+        public HttpResponseMessage GetSupplierReview() => ServiceAction(() =>
+        {
+            return _customerReview.GetSuppliersReview();
+        }, $"Getting Supplier Rooms");
     }
 }

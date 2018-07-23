@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Room.Booking.Business
 {
-   public class RoomFinder:IRoomFinder
+   public class RoomFinderComponent:IRoomFinder
     {
         IRoomBooking _IRoomBooking;
-        public RoomFinder(IRoomBooking roomBooking)
+        public RoomFinderComponent(IRoomBooking roomBooking)
         {
             _IRoomBooking = roomBooking;
         }

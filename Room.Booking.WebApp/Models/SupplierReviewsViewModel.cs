@@ -8,19 +8,19 @@ using System.Web;
 namespace Room.Booking.WebApp.Models
 {
     [DataContract]
-    public class HotelRoomsModel
+    public class SupplierViewModel
     {
         [DataMember]
-        public List<SuppliersRooms> SuppliersRooms { get; set; }
+        public List<CustomerReview> CustomerReviews { get; set; }
 
         [DataMember]
-        public string RoomTypes { get; set; }
+        public string Label { get; set; }
 
     }
-    public class HotelRoomsViewModel 
+    public class SupplierReviewsViewModel
     {
         [DataMember]
-        public List<HotelRoomsModel> RoomsByRoomType { get; set; }
+        public List<SupplierViewModel> SupplierReviews { get; set; }
  
     }
 }

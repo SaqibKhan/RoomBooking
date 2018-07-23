@@ -66,10 +66,14 @@ namespace Room.Booking.WebAPI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IRoomFinder>().To<RoomFinder>();
+            kernel.Bind<IRoomFinder>().To<RoomFinderComponent>();
+            kernel.Bind<ICustomerReview>().To<CustomerReviewComponent>();
+
             kernel.Bind<ILogger>().To<ServiceFileLogger>();
-            kernel.Bind<IRoomBooking>().To<RoomBooking>();
-          
+
+            kernel.Bind<IRoomBooking>().To<RoomBookingDac>();
+            kernel.Bind<IRemarks>().To<RemarksDac>();
+
         }
 
     }

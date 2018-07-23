@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\RoomBooking.cs" />
+    <Compile Include="Concrete\RemarksDac.cs" />
+    <Compile Include="Concrete\RoomBookingDac.cs" />
+    <Compile Include="Interface\IRemarks.cs" />
     <Compile Include="Interface\IRoomBooking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +63,9 @@
       <Project>{8DD168F0-65D1-4B2D-B1E7-06722A85E2A3}</Project>
       <Name>Room.Booking.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DbScript\script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

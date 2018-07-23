@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\RoomFinder.cs" />
+    <Compile Include="Concrete\CustomerReviewComponent.cs" />
+    <Compile Include="Concrete\RoomFinderComponent.cs" />
+    <Compile Include="Interface\ICustomerReview.cs" />
     <Compile Include="Interface\IRoomFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
