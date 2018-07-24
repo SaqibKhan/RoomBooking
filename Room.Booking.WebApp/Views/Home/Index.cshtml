@@ -1,36 +1,38 @@
 ﻿@model Room.Booking.WebApp.Models.HotelRoomsViewModel
 @{
     ViewBag.Title = "Hotel Rooms";
-  
+
 
 }
 
 
-<div>
 
-    @foreach (var item in Model.RoomsByRoomType)
-    {
+@if (Model.RoomsByRoomType == null)
+{
+    <div class="row col-4">No Record available</div>
+}
+else
+{
+    foreach (var item in Model.RoomsByRoomType)
+    {<div>
 
-        <div class="card">
-            <h3 class="card-header primary-color white-text">@item.RoomTypes</h3>
-            <div class="row col-4">
+            <div class="card">
+                <h3 class="card-header primary-color white-text">@item.RoomTypes</h3>
+                <div class="row col-4">
 
-                @foreach (var supplierRoom in item.SuppliersRooms)
-                {
-                    <div class="col-6"> @supplierRoom.SupplierName</div>
-                    <div class="col-6">@supplierRoom.Price</div>
+                    @foreach (var supplierRoom in item.SuppliersRooms)
+                    {
+                        <div class="col-6"> @supplierRoom.SupplierName</div>
+                        <div class="col-6">@supplierRoom.Price</div>
 
-                }
+                    }
+
+                </div>
 
             </div>
-
+            <br />
         </div>
-        <br />
-
     }
+}
 
 
-
-
-
-</div>

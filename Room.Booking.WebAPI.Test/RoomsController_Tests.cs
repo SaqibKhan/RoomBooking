@@ -1,9 +1,17 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NSubstitute;
+using NUnit.Framework;
+using Room.Booking.Business;
+using Room.Booking.Common.Logger;
+using Room.Booking.Entities;
+using Room.Booking.WebAPI.Controllers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Hosting;
+
 
 namespace Room.Booking.WebAPI.Test
 {
@@ -11,44 +19,47 @@ namespace Room.Booking.WebAPI.Test
     public class RoomsController_Tests
     {
 
-        //private ICheckqueTranslator _checkqueTranslator;
-        //private ILogger _logger;
-        //private ChequeWriterController _controller;
-        //private ChecqueResult _checqueResult = new ChecqueResult() { Name = "Saqib", AmountInWords = "THREE THOUSAND TWENTY FIVE DOLLARS AND THIRTY SIX CENTS" };
+        private  ICustomerReview _customerReview;
+        private IRoomFinder _roomFinder;
+        private ILogger _logger;
+     
+        private RoomsController _controller;
+        private List<CustomerReview> _lstReviews = new List<CustomerReview>();
 
+        public RoomsController_Tests()
+        {
+            var test = "";
+        }
         [SetUp]
         public void SetUp()
         {
-            //_checkqueTranslator = Substitute.For<ICheckqueTranslator>(); //  Mock the checkqueTranslator 
-            //_logger = Substitute.For<ILogger>(); // we need logger because WebAPI need this logger to log the activity
-            //_controller = new ChequeWriterController(_checkqueTranslator, _logger)  // WebAPI controller
-            //{
-            //    Request = new HttpRequestMessage()
-            //    {
-            //        Properties = { { HttpPropertyKeys.HttpConfigurationKey, new HttpConfiguration() } }
-            //    }
-            //};
+            _customerReview = Substitute.For<ICustomerReview>(); //  Mock the ICustomerReview 
+            _roomFinder = Substitute.For<IRoomFinder>(); //  Mock the IRoomFinder 
+            _logger = Substitute.For<ILogger>(); // we need logger because WebAPI need this logger to log the activity
+
+            // Fill the dummy Review list
+            _lstReviews.Add(new CustomerReview { ReviewId = 1, Rating = 4, SupplierId = 1, Title = "Romantic", CustomerRemarks = "Very Romantic place",UniqueLabels="Romantic" });
+
+            _controller = new RoomsController(_roomFinder, _customerReview, _logger)  // WebAPI controller
+            {
+                Request = new HttpRequestMessage()
+                {
+                    Properties = { { HttpPropertyKeys.HttpConfigurationKey, new HttpConfiguration() } }
+                }
+            };
         }
 
         [TestCase]
-        public void Call_NumbersToWords_WithIntergerParamter_ShouldResutrnCorrentStringValue()
+        public void Call_GetSuppliersReview_ShouldCall_customerReviewBusinessLogicMethod()
         {
-
-            //ACT
-
-
-            // Assert  
-            //      Assert.AreEqual("FIFTY THOUSAND TWO HUNDRED SIXTY THREE", result);
             //Arrange
-
-            //var writer = _checkqueTranslator.TranslateChequeToWords("Saqib", 3025.36m).Returns(_checqueResult);
+            var writer = _customerReview.GetSuppliersReview().Returns(_lstReviews);
 
             //ACT
-            //_controller.Translate("Saqib", 3025.36m);
+            _controller.GetSupplierReview();
 
             // Assert 
-            //_checkqueTranslator.Received(1); // should be call and only one per request
-
+            _customerReview.Received(1); // should be call and only one per request
         }
     }
 }

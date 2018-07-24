@@ -66,8 +66,6 @@ C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.WebAPI\obj\Debug\R
 C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.pdb
 C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.WebAPI\bin\Room.Booking.Common.dll
 C:\Users\Muhammad Saqib\source\repos\RoomBooking\Room.Booking.WebAPI\bin\Room.Booking.Common.pdb
-C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.csprojAssemblyReference.cache
-C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\Room.Booking.WebAPI.dll.config
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\Room.Booking.WebAPI.dll
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\Room.Booking.WebAPI.pdb
@@ -147,6 +145,8 @@ C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\System.Net
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\System.Web.Http.xml
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\System.Web.Http.WebHost.xml
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\bin\Dapper.xml
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.csprojAssemblyReference.cache
+C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.csproj.CopyComplete
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.dll
 C:\Users\Muhammad Saqib\Documents\RoomBooking\Room.Booking.WebAPI\obj\Debug\Room.Booking.WebAPI.pdb

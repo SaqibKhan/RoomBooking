@@ -1,46 +1,41 @@
 ﻿@model Room.Booking.WebApp.Models.SupplierReviewsViewModel
 @{
     ViewBag.Title = "Reviews";
+}
 
+@if (Model.SupplierReviews == null)
+{
+    <div class="row col-4">No Record available</div>
+}
+else
+{
+    foreach (var item in Model.SupplierReviews)
+    {
+        <div>
+            <div class="card">
+                <h3 class="card-header primary-color white-text">@item.Label</h3>
+                @foreach (var review in item.CustomerReviews)
+                {
+
+
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>@review.Title</strong> <span class="text-muted">Rating : @review.Rating</span>
+                            </div>
+                            <div class="panel-body">
+                                @review.CustomerRemarks
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                }
+            </div>
+            <br />
+        </div>
+    }
 }
 
 
-<div>
-
-    @foreach (var item in Model.SupplierReviews)
-    {
-
-        <div class="card">
-            <h3 class="card-header primary-color white-text">@item.Label</h3>
-
-
-            @foreach (var review in item.CustomerReviews)
-            {
-
-
-                <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>@review.Title</strong> <span class="text-muted">Rating : @review.Rating</span>
-                        </div>
-                        <div class="panel-body">
-                            @review.CustomerRemarks
-                        </div>
-                    </div>
-                </div>
-                <br />
-
-            }
-
-
-        </div>
-        <br />
-
-    }
-
-
-
-
-
-</div>
 
